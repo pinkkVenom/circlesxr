@@ -42,7 +42,7 @@
       <circles-manager-avatar/>
 
       <!-- Handle the Nav mesh (movment limitations) here-->
-      <a-entity id="walKMesh" class="navMesh" gltf-model="#floor_model" position="0 0 -3" scale="1 1 1" nav-mesh></a-entity>
+      <a-entity id="walKMesh" class="navMesh" gltf-model="#floor_model" position="0 0 -3" scale="0.5 0.5 0.5" nav-mesh></a-entity>
 
       <!--Conflict with artefact component!!!!!!!
         <a-entity id="rig" movement-controls="controls: keyboard, touch; speed: 0.5; constrainToNavMesh: true;">
@@ -107,13 +107,13 @@
             <a-sphere class="interactive ball" id="ball" position="0 1 -1" radius="0.5" height="1.5" color="#FFC65D" shadow
                     animation__enter="startEvents: mouseenter; property: scale; to: 0.75 0.75 0.75; dur: 100" 
                     animation__leave="startEvents: mouseleave; property: scale; to: 0.5 0.5 0.5; dur: 100"
-                    animation__click="property:color; from: #FFC65D; to: #fc8403; startEvents:click; dur:300;">
+                    animation__click="property:color; from: #FFC65D; to: #fc8403; startEvents:click; dur:300;"></a-sphere>
 
             <!-- Environment objects-->
             <a-entity id="roof" scale="0.9 0.7 0.9" position="0 3.9 -3" gltf-model="#roof_model"></a-entity>
-            <a-entity id="roomPos" position="0 0.1 -3">
+            <a-entity id="roomPos" position="0 0 -3">
                 <a-entity id="roomRot" rotation="0 0 0">
-                        <!-- <a-entity  id="walls" scale="0.3 0.5 0.3" gltf-model="#walls_model"></a-entity> -->
+                        <a-entity  id="walls" scale="0.6 0.5 0.61" gltf-model="#walls_model"></a-entity>
                 </a-entity>
             </a-entity>
             
