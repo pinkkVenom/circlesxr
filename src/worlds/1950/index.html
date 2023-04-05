@@ -46,6 +46,15 @@
       <!-- Circles' built-in manager and avatar [REQUIRED] -->
       <circles-manager-avatar/>
 
+      <a-entity circles-checkpoint circles-spawnpoint position="0 0.1 0"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="-2 0.1 -3"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="2 0.1 -3"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="-2 0.1 -5"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="2 0.1 -5"></a-entity>
+      <a-entity id="return" circles-checkpoint circles-spawnpoint position="0 0.1 -3"></a-entity>
+
+      <a-entity id="sensorama-xp" circles-checkpoint circles-spawnpoint position="10 0.1 -10"></a-entity>
+
       <!-- Handle the Nav mesh (movment limitations) here-->
       <a-entity id="walKMesh" class="navMesh" gltf-model="#floor_model" position="0 0 -3" scale="1 1 1" nav-mesh></a-entity>
 
@@ -143,6 +152,9 @@
                     <a-entity  id="walls" scale="0.7 0.5 0.7" gltf-model="#walls_model"></a-entity>
                 </a-entity>
               </a-entity>
+
+              <a-entity id="room_1950_button_1" position="0 1 -5" scale="0.8 0.8 0.8" circles-button="pedastal_color:rgb(74, 87, 95);" circles-sendpoint="target:#sensorama-xp;"></a-entity>
+              <a-entity id="room_1950_button_2" position="10.5 1 -10.5" scale="0.8 0.8 0.8" circles-button="pedastal_color:rgb(74, 87, 95);" circles-sendpoint="target:#return;"></a-entity>
 
       <!-- ambient music/sound -->
       <a-entity position="0 0 0" circles-sound="type:music; src:#magic_music; autoplay:true; loop:true; volume:0.02;"></a-entity>
