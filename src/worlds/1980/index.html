@@ -14,7 +14,7 @@
 
     <!-- a-scene with 'circles-properties' component [REQUIRED] -->
     <a-scene circles_scene_properties>
-      <a-assets>
+        <a-assets>
         <!-- add your assets here. Note that you can use relative links or absolute paths to your world -->
         <!-- credit: HDRMaps @ https://hdrmaps.com/above-the-clouds/ -->
         <img id='skyMap' src='assets/textures/086_hdrmaps_com_free_above_clouds.jpg' crossorigin="anonymous">
@@ -27,115 +27,134 @@
         <a-asset-item id="walls_model" src="assets/models/ThirdRoom_walls.glb"></a-asset-item>
         <a-asset-item id="floor_model" src="assets/models/floorNav3.glb"></a-asset-item>
         <a-asset-item id="roof_model" src="assets/models/roof.glb"></a-asset-item>
+        <a-asset-item id="headset_model" src="assets/models/AviationVR.glb"></a-asset-item>
+        <a-asset-item id="shuttle_model" src="assets/models/Saturn.glb"></a-asset-item>
+        <a-asset-item id="headset2_model" src="assets/models/NasaView.gltf"></a-asset-item>
+        <a-asset-item id="table_model" src="assets/models/low_height_coffee_table.glb"></a-asset-item>
 
-        <img id="sensorama1_img" src="assets/models/sensorama-patent.png" crossorigin="anonymous">
-        <img id="sensorama2_img" src="assets/models/sensorama2.jpg" crossorigin="anonymous">
-        <img id="sensorama3_img" src="assets/models/sensoramaBodyCam.jpg" crossorigin="anonymous">
+        <img id="nasa_img" src="assets/images/1990_a_new_continent.jpg" crossorigin="anonymous">
+        <img id="nasa2_img" src="assets/images/527183main_2010-08-27_1600_946-710.jpg" crossorigin="anonymous">
+        <img id="nasa3_img" src="assets/images/helmet.jpg" crossorigin="anonymous">
+        <img id="nasa4_img" src="assets/images/mission-iss-in-game-astronaut-suits.jpg" crossorigin="anonymous">
 
         <img id='room2' src='/worlds/1950/assets/models/room2.png' crossorigin="anonymous">
-      </a-assets>
+        </a-assets>
 
-      <!-- Circles' built-in assets [REQUIRED] -->
-      <circles-assets/>
+        <!-- Circles' built-in assets [REQUIRED] -->
+        <circles-assets/>
 
-      <!-- Circles' built-in manager and avatar [REQUIRED] -->
-      <circles-manager-avatar/>
+        <!-- Circles' built-in manager and avatar [REQUIRED] -->
+        <circles-manager-avatar/>
 
-      <!-- Handle the Nav mesh (movment limitations) here-->
-      <a-entity id="walKMesh" class="navMesh" gltf-model="#floor_model" position="0 0 -4" scale="0.5 0.5 0.32" nav-mesh></a-entity>
+        <!-- Handle the Nav mesh (movment limitations) here-->
+        <a-entity id="walKMesh" class="navMesh" gltf-model="#floor_model" position="0 0 -4" scale="0.5 0.5 0.32" nav-mesh></a-entity>
 
-      <!--Conflict with artefact component!!!!!!!
-        <a-entity id="rig" movement-controls="controls: keyboard, touch; speed: 0.5; constrainToNavMesh: true;">
-          <a-entity id="player" position="0 1.6 0" camera look-controls>
-              <a-entity id="cursor" cursor="rayOrigin:mouse" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
-              <a-entity id="light" position="0.5 -0.5 0" light="type:spot; intensity:0.8; castShadow:true; shadowBias:-0.005; penumbra:0.3;"></a-entity>
-          </a-entity>
-      </a-entity>
+        <a-entity id="Artefact-shuttle"  
+                scale="0.1 0.1 0.1" position="-1.25 0.9 -9" rotation="0 0 -90" 
+                gltf-model="#shuttle_model"
+                class="interactive"
+                shadow="receive:false; cast:false;"
+                circles-artefact="inspectScale:0.2 0.2 0.2; textRotationY:0.0; textLookAt:false; inspectRotation:0.0 0.0 -90.0; inspectOffsetY:0; 
+                        label_visible:true; label_offset:0.0 0.7 0.0; arrow_position:down;
+                        title:Space Shuttle;
+                        description:The Virtual Interface Environment Workstation (VIEW) is a head-mounted stereoscopic display system in which the display may be an artificial computer-generated environment or a real environment relayed from remote video cameras.;
+                        label_text:Space Shuttle;">
+        </a-entity>
 
-      <a-entity oculus-touch-controls="hand: left"></a-entity>
-      <a-entity oculus-touch-controls="hand: right" laser-controls></a-entity>-->
+        <a-entity id="Artefact-headset"  
+                scale="0.2 0.2 0.2" position="1.5 1 -9" rotation="0 0 0" 
+                gltf-model="#headset2_model"
+                class="interactive"
+                shadow="receive:false; cast:false;"
+                circles-artefact="inspectScale:0.2 0.2 0.2; textRotationY:0.0; textLookAt:false; inspectRotation:0.0 0.0 0.0; inspectOffsetY:0; 
+                        label_visible:true; label_offset:0.0 0.7 0.0; arrow_position:down;
+                        title:The View;
+                        description:The Virtual Interface Environment Workstation (VIEW) is a head-mounted stereoscopic display system in which the display may be an artificial computer-generated environment or a real environment relayed from remote video cameras.;
+                        label_text:The View;">
+        </a-entity>
 
 
-      <!-- Images -->
-            <a-entity   id="sensorama1_image" position="-3.75 1.7 -3.2" rotation="0 90 0" scale="1 1 1"
+        <!-- Images -->
+        <a-entity   id="nasa_img" position="-3.75 1.7 -4.2" rotation="0 90 0" scale="1 1 1"
                         geometry="primitive:plane; width:1.5; height:1.0;"
-                        material="src:#sensorama1_img;">
-            </a-entity>
-            <a-entity   id="sensorama2_image" position="-3.75 1.7 -5.2" rotation="0 90 0" scale="1 1 1"
+                        material="src:#nasa_img;">
+        </a-entity>
+        <a-entity   id="nasa2_img" position="-3.75 1.7 -6.2" rotation="0 90 0" scale="1 1 1"
                         geometry="primitive:plane; width:1.5; height:1.0;"
-                        material="src:#sensorama2_img;">
-            </a-entity>
-            <a-entity   id="sensorama1_image" position="3.75 1.7 -3.2" rotation="0 -90 0" scale="1 1 1"
+                        material="src:#nasa2_img;">
+        </a-entity>
+        <a-entity   id="nasa3_img" position="3.75 1.7 -4.2" rotation="0 -90 0" scale="1 1 1"
                         geometry="primitive:plane; width:1.5; height:1.0;"
-                        material="src:#sensorama1_img;">
-            </a-entity>
-            <a-entity   id="sensorama2_image" position="3.75 1.7 -5.2" rotation="0 -90 0" scale="1 1 1"
+                        material="src:#nasa3_img;">
+        </a-entity>
+        <a-entity   id="nasa4_img" position="3.75 1.7 -6.2" rotation="0 -90 0" scale="1 1 1"
                         geometry="primitive:plane; width:1.5; height:1.0;"
-                        material="src:#sensorama2_img;">
-            </a-entity>
+                        material="src:#nasa4_img;">
+        </a-entity>
             
-            <!-- Image text -->
-            <a-entity id="sensorama_plane" position="-3.6 0.5 -3" rotation="-40 90 0" scale="1 1 1">
+        <!-- Image text -->
+        <a-entity id="sensorama_plane" position="-3.6 0.5 -4" rotation="-40 90 0" scale="1 1 1">
                 <a-entity geometry="primitive:box; width:1.8; height:0.8; depth:0.05;" material="color:white;" position="0.2 0 0" shadow></a-entity>
                 <a-entity text="value:Sensorama; 
                         color:black; font:roboto; width:1; anchor:left; baseline:top; wrapCount:16;" position="-0.5 0.3 0.05" ></a-entity>
                 <a-entity text="value:In the mid 1950s cinematographer Morton Heilig developed the Sensorama (patented 1962) which was an arcade-style theatre cabinet that would stimulate all the senses, not just sight and sound. It featured stereo speakers, a stereoscopic 3D display, fans, smell generators and a vibrating chair.;
                         color:black; font:roboto; width:1.5; anchor:left; baseline:top; wrapCount:38;" position="-0.6 0.2 0.05" ></a-entity>
-            </a-entity>
-            <a-entity id="sensorama2_plane" position="-3.6 0.5 -5" rotation="-40 90 0" scale="1 1 1">
+        </a-entity>
+        <a-entity id="sensorama2_plane" position="-3.6 0.5 -6" rotation="-40 90 0" scale="1 1 1">
                 <a-entity geometry="primitive:box; width:1.8; height:0.8; depth:0.05;" material="color:white;" position="0.2 0 0" shadow></a-entity>
                 <a-entity text="value:Sensorama; 
                         color:black; font:roboto; width:1; anchor:left; baseline:top; wrapCount:16;" position="-0.5 0.3 0.05" ></a-entity>
                 <a-entity text="value:In the mid 1950s cinematographer Morton Heilig developed the Sensorama (patented 1962) which was an arcade-style theatre cabinet that would stimulate all the senses, not just sight and sound. It featured stereo speakers, a stereoscopic 3D display, fans, smell generators and a vibrating chair.;
                         color:black; font:roboto; width:1.5; anchor:left; baseline:top; wrapCount:38;" position="-0.6 0.2 0.05" ></a-entity>
-            </a-entity>
-            <a-entity id="sensorama_plane" position="3.6 0.5 -3.3" rotation="-40 -90 0" scale="1 1 1">
+        </a-entity>
+        <a-entity id="sensorama_plane" position="3.6 0.5 -4.3" rotation="-40 -90 0" scale="1 1 1">
                 <a-entity geometry="primitive:box; width:1.8; height:0.8; depth:0.05;" material="color:white;" position="0.2 0 0" shadow></a-entity>
                 <a-entity text="value:Sensorama; 
                         color:black; font:roboto; width:1; anchor:left; baseline:top; wrapCount:16;" position="-0.5 0.3 0.05" ></a-entity>
                 <a-entity text="value:In the mid 1950s cinematographer Morton Heilig developed the Sensorama (patented 1962) which was an arcade-style theatre cabinet that would stimulate all the senses, not just sight and sound. It featured stereo speakers, a stereoscopic 3D display, fans, smell generators and a vibrating chair.;
                         color:black; font:roboto; width:1.5; anchor:left; baseline:top; wrapCount:38;" position="-0.6 0.2 0.05" ></a-entity>
-            </a-entity>
-            <a-entity id="sensorama2_plane" position="3.6 0.5 -5.3" rotation="-40 -90 0" scale="1 1 1">
+        </a-entity>
+        <a-entity id="sensorama2_plane" position="3.6 0.5 -6.3" rotation="-40 -90 0" scale="1 1 1">
                 <a-entity geometry="primitive:box; width:1.8; height:0.8; depth:0.05;" material="color:white;" position="0.2 0 0" shadow></a-entity>
                 <a-entity text="value:Sensorama; 
                         color:black; font:roboto; width:1; anchor:left; baseline:top; wrapCount:16;" position="-0.5 0.3 0.05" ></a-entity>
                 <a-entity text="value:In the mid 1950s cinematographer Morton Heilig developed the Sensorama (patented 1962) which was an arcade-style theatre cabinet that would stimulate all the senses, not just sight and sound. It featured stereo speakers, a stereoscopic 3D display, fans, smell generators and a vibrating chair.;
                         color:black; font:roboto; width:1.5; anchor:left; baseline:top; wrapCount:38;" position="-0.6 0.2 0.05" ></a-entity>
-            </a-entity>
+        </a-entity>
 
 
-            <a-entity id="sensorama"  scale="0.1 0.1 0.1" position="0 0.2 -5.25" gltf-model="#sensorama_model"></a-entity>
-            <a-entity id="coffee_table"  scale="0.7 1 0.7" rotation="0 90 0" position="-0.25 0 -1.25" gltf-model="#table_model"></a-entity>
 
             <!-- Environment objects-->
-            <a-entity id="roof" scale="1 0.7 0.9" position="0 3.9 -4" gltf-model="#roof_model"></a-entity>
-            <a-entity id="roomPos" position="0 0.1 -4">
+        <a-entity id="roof" scale="1 0.7 0.9" position="0 3.9 -4" gltf-model="#roof_model"></a-entity>
+        <a-entity id="roomPos" position="0 0.1 -4">
                 <a-entity id="roomRot" rotation="0 0 0">
                     <a-entity  id="walls" scale="0.53 0.35 0.4" gltf-model="#walls_model"></a-entity>
                 </a-entity>
-              </a-entity>
+        </a-entity>
 
-      <!-- ambient music/sound -->
-      <a-entity position="0 0 0" circles-sound="type:music; src:#magic_music; autoplay:true; loop:true; volume:0.02;"></a-entity>
+        <a-entity id="cockPit" scale="0.4 0.4 0.4" position="0 0.75 -4" gltf-model="#headset_model"></a-entity>
+        <a-entity id="coffee_table"  scale="1.75 1 0.7" rotation="0 0 0" position="0 0 -9" gltf-model="#table_model"></a-entity>
 
-      <!-- sky and lights -->
-      <a-entity id="sunlight" position="0 20 0" rotation="40 0 0" 
+        <!-- ambient music/sound -->
+        <a-entity position="0 0 0" circles-sound="type:music; src:#magic_music; autoplay:true; loop:true; volume:0.02;"></a-entity>
+
+        <!-- sky and lights -->
+        <a-entity id="sunlight" position="0 20 0" rotation="40 0 0" 
                 light="type:directional; intensity:4; color:#d5e4f5; castShadow:false;"></a-entity>
-      <a-entity light="type:hemisphere; color:#FFFFFF; groundColor:#BCE2F4; intensity:3.0"></a-entity>
+        <a-entity light="type:hemisphere; color:#FFFFFF; groundColor:#BCE2F4; intensity:3.0"></a-entity>
 
-      <a-entity id='skyBox'
+        <a-entity id='skyBox'
                 rotation='0 200 0'
                 geometry='primitive:sphere; radius:50; segments-height:24; segments-width:24;'
                 material='shader:flat; src:#skyMap; side:back;'>
-      </a-entity>
+        </a-entity>
 
-      <a-entity id="1970_link"
-                position="-3.25 1.5 0" rotation="0 0 0" scale="1 1 1"
+        <a-entity id="1970_link"
+                position="-3.25 1.5 -1" rotation="0 0 0" scale="1 1 1"
                 circles-portal="img_src:#room2; title_text:Back to 1970; link_url:/w/1970"></a-entity>
 
         <a-entity id="1990_link"
-                position="3.25 1.5 0" rotation="0 180 0" scale="1 1 1"
+                position="3.25 1.5 -1" rotation="0 180 0" scale="1 1 1"
                 circles-portal="img_src:#room2; title_text:Go to 1990; link_url:/w/1990"></a-entity>
     </a-scene>
 
