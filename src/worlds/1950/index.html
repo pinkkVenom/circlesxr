@@ -30,6 +30,7 @@
           <a-asset-item id="floor2_model" src="assets/models/sensoramaFloor.glb"></a-asset-item>
           <a-asset-item id="sensorama_model" src="assets/models/sensorama.glb"></a-asset-item>
           <a-asset-item id="roof_model" src="assets/models/roof.glb"></a-asset-item>
+          <a-asset-item id="roof2_model" src="assets/models/roof2.glb"></a-asset-item>
           <a-asset-item id="table_model" src="assets/models/low_height_coffee_table.glb"></a-asset-item>
           <a-asset-item id="nasaview-gltf" src="/worlds/1950/assets/models/NasaView.gltf" response-type="arraybuffer"></a-asset-item>
           <a-asset-item id="ticket-model"   src="/worlds/VD_2_Theatre/assets/models/Ticket.glb" response-type="arraybuffer"></a-asset-item>
@@ -37,6 +38,8 @@
           <img id="sensorama1_img" src="assets/models/sensorama-patent.png" crossorigin="anonymous">
           <img id="sensorama2_img" src="assets/models/sensorama2.jpg" crossorigin="anonymous">
           <img id="sensorama3_img" src="assets/models/sensoramaBodyCam.jpg" crossorigin="anonymous">
+
+          <video id="bike_vid" autoplay="true" loop="true" src="assets/images/sensorama_bike.mp4"></video>
       
 
       <!-- Circles' built-in assets [REQUIRED] -->
@@ -88,7 +91,7 @@
                 material="src:#sensorama2_img;">
         </a-entity>
 
-            
+        <a-video src="#bike_vid" width="4.75" height="2.75" rotation="0 45 0" position="14.5 1.5 -8.6"></a-video>
             
         <!-- Image text -->
         <a-entity id="sensorama_plane" position="-3.1 0.5 -3" rotation="-40 90 0" scale="1 1 1">
@@ -140,6 +143,7 @@
 
         <!-- Environment objects-->
         <a-entity id="roof" scale="0.9 0.7 1" position="0 3.9 -3" gltf-model="#roof_model"></a-entity>
+        <a-entity id="roof2" scale="0.5 0.5 0.5" position="13.75 3.4 -11.25" gltf-model="#roof2_model"></a-entity>
         <a-entity id="roomPos" position="0 0.1 -3">
                 <a-entity id="roomRot" rotation="0 0 0">
                     <a-entity  id="walls" scale="0.7 0.5 0.7" gltf-model="#walls_model"></a-entity>
