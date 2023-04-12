@@ -33,37 +33,29 @@
         <img id="sensorama3_img" src="assets/models/sensoramaBodyCam.jpg" crossorigin="anonymous">
 
         <img id='room2' src='/worlds/1950/assets/models/room2.png' crossorigin="anonymous">
-      </a-assets>
 
-      <!-- Circles' built-in assets [REQUIRED] -->
-      <circles-assets/>
+        <video id="video" autoplay loop="true" src="assets/images/360_vr_master_series___free_download___london_on_tower_bridge (720p).mp4"> </video>
+        </a-assets>
 
-      <!-- Circles' built-in manager and avatar [REQUIRED] -->
-      <circles-manager-avatar/>
+        <!-- Circles' built-in assets [REQUIRED] -->
+        <circles-assets/>
 
-      <a-entity id="default" circles-checkpoint circles-spawnpoint position="0 0.1 0"></a-entity>
-      <a-entity circles-checkpoint circles-spawnpoint position="-2 0.1 -5.5"></a-entity>
-      <a-entity circles-checkpoint circles-spawnpoint position="2 0.1 -5.5"></a-entity>
-      <a-entity circles-checkpoint circles-spawnpoint position="-2 0.1 -8"></a-entity>
-      <a-entity circles-checkpoint circles-spawnpoint position="2 0.1 -8"></a-entity>
-      <a-entity circles-checkpoint circles-spawnpoint position="4 0.3 -13"></a-entity>
+        <!-- Circles' built-in manager and avatar [REQUIRED] -->
+        <circles-manager-avatar/>
 
-      <!-- Handle the Nav mesh (movment limitations) here-->
-      <a-entity id="walKMesh" class="navMesh" gltf-model="#floor_model" position="-0.2 0 -4.2" scale="0.9 0.9 0.9" nav-mesh></a-entity>
+        <a-entity id="default" circles-checkpoint circles-spawnpoint position="0 0.1 0"></a-entity>
+        <a-entity circles-checkpoint position="-2 0.1 -5.5"></a-entity>
+        <a-entity circles-checkpoint position="2 0.1 -5.5"></a-entity>
+        <a-entity circles-checkpoint position="-2 0.1 -8"></a-entity>
+        <a-entity circles-checkpoint position="2 0.1 -8"></a-entity>
+        <a-entity circles-checkpoint position="4.75 0.3 -12.3"></a-entity>
+        <a-entity circles-checkpoint position="3.2 0.3 -10.7"></a-entity>
 
-      <!--Conflict with artefact component!!!!!!!
-        <a-entity id="rig" movement-controls="controls: keyboard, touch; speed: 0.5; constrainToNavMesh: true;">
-          <a-entity id="player" position="0 1.6 0" camera look-controls>
-              <a-entity id="cursor" cursor="rayOrigin:mouse" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
-              <a-entity id="light" position="0.5 -0.5 0" light="type:spot; intensity:0.8; castShadow:true; shadowBias:-0.005; penumbra:0.3;"></a-entity>
-          </a-entity>
-      </a-entity>
-
-      <a-entity oculus-touch-controls="hand: left"></a-entity>
-      <a-entity oculus-touch-controls="hand: right" laser-controls></a-entity>-->
+        <!-- Handle the Nav mesh (movment limitations) here-->
+        <a-entity id="walKMesh" class="navMesh" gltf-model="#floor_model" position="-0.2 0 -4.2" scale="0.9 0.9 0.8" nav-mesh></a-entity>
 
 
-      <!-- Images -->
+        <!-- Images -->
         <a-entity   id="sensorama1_image" position="-3.4 1.7 -7.6" rotation="0 90 0" scale="1 1 1"
         geometry="primitive:plane; width:1.5; height:1.0;"
         material="src:#sensorama1_img;">
@@ -113,27 +105,29 @@
 
             <!-- Environment objects-->
             <a-entity id="roof" scale="1.5 0.7 1.4" position="2 3.9 -5.5" gltf-model="#roof_model"></a-entity>
-            <a-entity id="roomPos" position="1.5 0.1 -7">
+            <a-entity id="roomPos" position="1.62 0.1 -6.45">
                 <a-entity id="roomRot" rotation="0 0 0">
-                    <a-entity  id="walls" scale="0.75 0.75 0.75" position="-1.75 0 2" gltf-model="#walls_model"></a-entity>
+                    <a-entity  id="walls" scale="0.75 0.55 0.75" position="-1.75 0 2" gltf-model="#walls_model"></a-entity>
                 </a-entity>
             </a-entity>
 
-      <!-- ambient music/sound -->
-      <a-entity position="0 0 0" circles-sound="type:music; src:#magic_music; autoplay:true; loop:true; volume:0.02;"></a-entity>
+            <a-videosphere src="#video" position="4.75 1.5 -12.3" radius="2.25"></a-videosphere>
 
-      <!-- sky and lights -->
-      <a-entity id="sunlight" position="0 20 0" rotation="40 0 0" 
+        <!-- ambient music/sound -->
+        <a-entity position="0 0 0" circles-sound="type:music; src:#magic_music; autoplay:true; loop:true; volume:0.02;"></a-entity>
+
+        <!-- sky and lights -->
+        <a-entity id="sunlight" position="0 20 0" rotation="40 0 0" 
                 light="type:directional; intensity:4; color:#d5e4f5; castShadow:false;"></a-entity>
-      <a-entity light="type:hemisphere; color:#FFFFFF; groundColor:#BCE2F4; intensity:3.0"></a-entity>
+        <a-entity light="type:hemisphere; color:#FFFFFF; groundColor:#BCE2F4; intensity:3.0"></a-entity>
 
-      <a-entity id='skyBox'
+        <a-entity id='skyBox'
                 rotation='0 200 0'
                 geometry='primitive:sphere; radius:50; segments-height:24; segments-width:24;'
                 material='shader:flat; src:#skyMap; side:back;'>
-      </a-entity>
+        </a-entity>
 
-      <a-entity id="1950_link"
+        <a-entity id="1950_link"
                 position="-3.4 1.5 -0.5" rotation="0 0 0" scale="1 1 1"
                 circles-portal="img_src:#room2; title_text:Back to 1950; link_url:/w/1950"></a-entity>
 
@@ -141,9 +135,9 @@
                 position="3.1 1.5 -0.5" rotation="0 180 0" scale="1 1 1"
                 circles-portal="img_src:#room2; title_text:Go to 1980; link_url:/w/1980"></a-entity>
 
-    </a-scene>
+        </a-scene>
 
-    <!-- Circles' end scripts [REQUIRED] -->
-    <circles-end-scripts/>
+        <!-- Circles' end scripts [REQUIRED] -->
+        <circles-end-scripts/>
   </body>
 </html>

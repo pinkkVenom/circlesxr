@@ -22,6 +22,7 @@
 
         <!-- credit: "magic" music - https://soundcloud.com/royaltyfreebackgroundmusic/sets/creative-commons-music-365 -->
         <audio id="magic_music" src="assets/sounds/Magic_Music.mp3" preload="auto" crossorigin="anonymous"></audio>
+        <audio id="bike_music" src="assets/sounds/636541__lfinck__bike-01.wav" preload="auto" crossorigin="anonymous"></audio>
 
         <!-- loading navmesh. Following instructiosn from here: https://github.com/n5ro/aframe-extras/tree/master/src/pathfinding -->
           <a-asset-item id="walls_model" src="assets/models/FirstRoom_walls.glb"></a-asset-item>
@@ -32,47 +33,34 @@
           <a-asset-item id="roof_model" src="assets/models/roof.glb"></a-asset-item>
           <a-asset-item id="roof2_model" src="assets/models/roof2.glb"></a-asset-item>
           <a-asset-item id="table_model" src="assets/models/low_height_coffee_table.glb"></a-asset-item>
-          <a-asset-item id="nasaview-gltf" src="/worlds/1950/assets/models/NasaView.gltf" response-type="arraybuffer"></a-asset-item>
+          <a-asset-item id="teleglass-gltf" src="assets/models/Teleyeglasses.glb" response-type="arraybuffer"></a-asset-item>
           
           <img id="sensorama1_img" src="assets/models/sensorama-patent.png" crossorigin="anonymous">
           <img id="sensorama2_img" src="assets/models/sensorama2.jpg" crossorigin="anonymous">
           <img id="sensorama3_img" src="assets/models/sensoramaBodyCam.jpg" crossorigin="anonymous">
-
-          <video id="bike_vid" autoplay="true" loop="true" src="assets/images/sensorama_bike.mp4"></video>
       
 
-      <!-- Circles' built-in assets [REQUIRED] -->
-      <circles-assets/>
-</a-assets>
+        <!-- Circles' built-in assets [REQUIRED] -->
+        <circles-assets/>
+        </a-assets>
 
-      <!-- Circles' built-in manager and avatar [REQUIRED] -->
-      <circles-manager-avatar/>
+        <!-- Circles' built-in manager and avatar [REQUIRED] -->
+        <circles-manager-avatar/>
 
-      <a-entity circles-checkpoint circles-spawnpoint position="0 0.1 0"></a-entity>
-      <a-entity circles-checkpoint position="-2 0.1 -3"></a-entity>
-      <a-entity circles-checkpoint position="2 0.1 -3"></a-entity>
-      <a-entity circles-checkpoint position="-2 0.1 -5"></a-entity>
-      <a-entity circles-checkpoint position="2 0.1 -5"></a-entity>
-      <a-entity id="return" circles-checkpoint position="0 0.1 -3"></a-entity>
+        <a-entity circles-checkpoint circles-spawnpoint position="0 0.1 0"></a-entity>
+        <a-entity circles-checkpoint position="-2 0.1 -3"></a-entity>
+        <a-entity circles-checkpoint position="2 0.1 -3"></a-entity>
+        <a-entity circles-checkpoint position="-2 0.1 -5"></a-entity>
+        <a-entity circles-checkpoint position="2 0.1 -5"></a-entity>
+        <a-entity id="return" circles-checkpoint position="0 0.1 -3"></a-entity>
 
-      <a-entity id="sensorama-xp" circles-checkpoint circles-spawnpoint position="13.7 0.1 -9.6"></a-entity>
+        <a-entity id="sensorama-xp" circles-checkpoint position="13.7 0.1 -9.6"></a-entity>
 
-      <!-- Handle the Nav mesh (movment limitations) here-->
-      <!-- <a-entity id="walKMesh" class="navMesh" gltf-model="#floor_model" position="6.9 0 -6.3" scale="0.7 1 0.7" nav-mesh></a-entity> -->
-      <a-entity id="wal2KMesh" class="navMesh" gltf-model="#floor2_model" position="0 0 -3" scale="0.6 1 0.6" nav-mesh></a-entity>
+        <!-- Handle the Nav mesh (movment limitations) here-->
+        <!-- <a-entity id="walKMesh" class="navMesh" gltf-model="#floor_model" position="6.9 0 -6.3" scale="0.7 1 0.7" nav-mesh></a-entity> -->
+        <a-entity id="wal2KMesh" class="navMesh" gltf-model="#floor2_model" position="0 0 -3" scale="0.6 1 0.6" nav-mesh></a-entity>
 
-      <!--<a-entity id="rig" movement-controls="controls: keyboard, touch; speed: 0.5; constrainToNavMesh: true;">
-          <a-entity id="player" position="0 1.6 0" camera look-controls>
-              <a-entity id="cursor" cursor="rayOrigin:mouse" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
-              <a-entity id="light" position="0.5 -0.5 0" light="type:spot; intensity:0.8; castShadow:true; shadowBias:-0.005; penumbra:0.3;"></a-entity>
-          </a-entity>
-      </a-entity>-->
-
-      <!--<a-entity oculus-touch-controls="hand: left"></a-entity>
-      <a-entity oculus-touch-controls="hand: right" laser-controls></a-entity>
-      -->
-
-      <!-- Images -->
+        <!-- Images -->
         <a-entity   id="sensorama1_image" position="-3.25 1.7 -3.2" rotation="0 90 0" scale="1 1 1"
                 geometry="primitive:plane; width:1.5; height:1.0;"
                 material="src:#sensorama1_img;">
@@ -90,8 +78,9 @@
                 material="src:#sensorama2_img;">
         </a-entity>
 
-        <a-video src="#bike_vid" width="4.75" height="2.75" rotation="0 45 0" position="14.5 1.5 -8.6"></a-video>
-            
+        <a-video src="assets/images/pexels-marc-espejo-5952207-960x540-30fps.mp4" width="4.75" height="2.75" rotation="0 45 0" position="14.5 1.5 -8.6"></a-video>
+        <a-entity position="14.5 1.5 -8.6"  circles-sound="type:ambient; src:#bike_music; autoplay:true; loop:true; volume:0.8;" maxDistance="25"></a-entity>
+        
         <!-- Image text -->
         <a-entity id="sensorama_plane" position="-3.1 0.5 -3" rotation="-40 90 0" scale="1 1 1">
                 <a-entity geometry="primitive:box; width:1.8; height:0.8; depth:0.05;" material="color:white;" position="0.2 0 0" shadow></a-entity>
@@ -123,19 +112,17 @@
         </a-entity>
 
         <!--<a-entity id="nasaView" scale="0.2 0.2 0.2" position="0 1.2 -2" rotation="0 180 0" gltf-model="#nasaview_model"></a-entity>-->
-        <a-entity id="Artefact-nasaView"  
-                scale="0.2 0.2 0.2" position="0 1.2 -1.5" rotation="0 180 0" 
-                gltf-model="#nasaview-gltf"
+        <a-entity id="Artefact-teleglass"  
+                scale="0.2 0.2 0.2" position="0 1 -1.5" rotation="0 180 0" 
+                gltf-model="#teleglass-gltf"
                 class="interactive"
                 shadow="receive:false; cast:false;"
-                circles-artefact="inspectScale:0.2 0.2 0.2; textRotationY:0.0; textLookAt:false; inspectRotation:0.0 0.0 0; inspectOffsetY:0; 
+                circles-artefact="inspectScale:0.3 0.3 0.3; textRotationY:0.0; textLookAt:false; inspectRotation:0.0 0.0 0; inspectOffsetY:0; 
                         label_visible:true; label_offset:0.0 0.7 0.0; arrow_position:down;
                         title:The VIEW;
                         description:The Virtual Interface Environment Workstation (VIEW) is a head-mounted stereoscopic display system in which the display may be an artificial computer-generated environment or a real environment relayed from remote video cameras.;
                         label_text:The VIEW;">
         </a-entity>
-
-
 
         <a-entity id="sensorama"  scale="0.1 0.1 0.1" position="0 0.2 -5.25" gltf-model="#sensorama_model"></a-entity>
         <a-entity id="coffee_table"  scale="0.7 1 0.7" rotation="0 90 0" position="-0.25 0 -1.25" gltf-model="#table_model"></a-entity>

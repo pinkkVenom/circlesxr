@@ -68,7 +68,7 @@
         </a-entity>
 
         <a-entity id="Artefact-headset"  
-                scale="0.2 0.2 0.2" position="1.5 1 -9" rotation="0 0 0" 
+                scale="0.2 0.2 0.2" position="1.5 1 -9" rotation="0 0 0"
                 gltf-model="#headset2_model"
                 class="interactive"
                 shadow="receive:false; cast:false;"
@@ -79,6 +79,18 @@
                         label_text:The View;">
         </a-entity>
 
+        <!--
+        <a-entity id="Artefact-cockpit"  
+                scale="0.2 0.2 0.2" position="0 0.75 -4" rotation="0 0 0"
+                gltf-model="#headset_model"
+                class="interactive"
+                shadow="receive:false; cast:false;"
+                circles-artefact="inspectScale:0.2 0.2 0.2; textRotationY:0.0; textLookAt:false; inspectRotation:0.0 0.0 0.0; inspectOffsetY:0; 
+                        label_visible:true; label_offset:0.0 0.7 0.0; arrow_position:down;
+                        title:The View;
+                        description:The Virtual Interface Environment Workstation (VIEW) is a head-mounted stereoscopic display system in which the display may be an artificial computer-generated environment or a real environment relayed from remote video cameras.;
+                        label_text:The View;">
+        </a-entity> -->
 
         <!-- Images -->
         <a-entity   id="nasa_img" position="-3.75 1.7 -4.2" rotation="0 90 0" scale="1 1 1"
@@ -129,12 +141,11 @@
         </a-entity>
 
 
-
-            <!-- Environment objects-->
+        <!-- Environment objects-->
         <a-entity id="roof" scale="1 0.7 0.9" position="0 3.9 -4" gltf-model="#roof_model"></a-entity>
         <a-entity id="roomPos" position="0 0.1 -4">
                 <a-entity id="roomRot" rotation="0 0 0">
-                    <a-entity  id="walls" scale="0.8 0.5 0.64" gltf-model="#walls_model"></a-entity>
+                    <a-entity  id="walls" scale="0.80 0.5 0.64" gltf-model="#walls_model"></a-entity>
                 </a-entity>
         </a-entity>
 
