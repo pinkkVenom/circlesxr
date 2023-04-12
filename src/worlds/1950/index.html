@@ -35,9 +35,9 @@
           <a-asset-item id="table_model" src="assets/models/low_height_coffee_table.glb"></a-asset-item>
           <a-asset-item id="teleglass-gltf" src="assets/models/Teleyeglasses.glb" response-type="arraybuffer"></a-asset-item>
           
-          <img id="sensorama1_img" src="assets/models/sensorama-patent.png" crossorigin="anonymous">
-          <img id="sensorama2_img" src="assets/models/sensorama2.jpg" crossorigin="anonymous">
-          <img id="sensorama3_img" src="assets/models/sensoramaBodyCam.jpg" crossorigin="anonymous">
+          <img id="sensorama1_img" src="assets/images/sensorama-patent.png" crossorigin="anonymous">
+          <img id="sensorama2_img" src="assets/images/sensorama2.jpg" crossorigin="anonymous">
+          <img id="sensorama3_img" src="assets/images/sensoramaBodyCam.jpg" crossorigin="anonymous">
       
 
         <!-- Circles' built-in assets [REQUIRED] -->
@@ -69,17 +69,17 @@
                 geometry="primitive:plane; width:1.5; height:1.0;"
                 material="src:#sensorama2_img;">
         </a-entity>
-        <a-entity   id="sensorama1_image" position="3.25 1.7 -3.2" rotation="0 -90 0" scale="1 1 1"
-                geometry="primitive:plane; width:1.5; height:1.0;"
-                material="src:#sensorama1_img;">
+        <a-entity   id="sensorama3_image" position="3.25 2 -3.2" rotation="0 -90 0" scale="1 1 1"
+                geometry="primitive:plane; width:1.5; height:1.75;"
+                material="src:#sensorama3_img;">
         </a-entity>
-        <a-entity   id="sensorama2_image" position="3.25 1.7 -5.2" rotation="0 -90 0" scale="1 1 1"
+        <a-entity   id="sensorama4_image" position="3.25 1.7 -5.2" rotation="0 -90 0" scale="1 1 1"
                 geometry="primitive:plane; width:1.5; height:1.0;"
                 material="src:#sensorama2_img;">
         </a-entity>
 
         <a-video src="assets/images/pexels-marc-espejo-5952207-960x540-30fps.mp4" width="4.75" height="2.75" rotation="0 45 0" position="14.5 1.5 -8.6"></a-video>
-        <a-entity position="14.5 1.5 -8.6"  circles-sound="type:ambient; src:#bike_music; autoplay:true; loop:true; volume:0.8;" maxDistance="25"></a-entity>
+        <a-entity position="14.5 1.5 -8.6"  circles-sound="type:ambient; src:#bike_music; autoplay:true; loop:true; volume:0.8;" maxDistance="5"></a-entity>
         
         <!-- Image text -->
         <a-entity id="sensorama_plane" position="-3.1 0.5 -3" rotation="-40 90 0" scale="1 1 1">
