@@ -52,6 +52,14 @@
         <!-- Circles' built-in manager and avatar [REQUIRED] -->
         <circles-manager-avatar/>
 
+        <a-entity id="default" circles-checkpoint circles-spawnpoint position="0 0.1 0"></a-entity>
+        <a-entity circles-checkpoint position="-2.9 0.15 -5"></a-entity>
+        <a-entity circles-checkpoint position="2.9 0.15 -5"></a-entity>
+        <a-entity circles-checkpoint position="-2.9 0.15 -7.5"></a-entity>
+        <a-entity circles-checkpoint position="2.9 0.15 -7.5"></a-entity>
+        <a-entity circles-checkpoint position="-1.65 0.15 -9.5"></a-entity>
+        <a-entity circles-checkpoint position="1.65 0.15 -9.5"></a-entity>
+
         <!-- Handle the Nav mesh (movment limitations) here-->
         <a-entity id="walKMesh" class="navMesh" gltf-model="#floor_model" position="0 0 -5" scale="0.5 0.5 0.5" nav-mesh></a-entity>
 
@@ -62,9 +70,9 @@
                 shadow="receive:false; cast:false;"
                 circles-artefact="inspectScale:0.08 0.08 0.08; textRotationY:0.0; textLookAt:false; inspectRotation:0.0 0.0 0; inspectOffsetY:-0.2; 
                         label_visible:true; label_offset:0.0 0.7 0.0; arrow_position:down;
-                        title:The VIEW;
+                        title:Playstation VR;
                         description:The Virtual Interface Environment Workstation (VIEW) is a head-mounted stereoscopic display system in which the display may be an artificial computer-generated environment or a real environment relayed from remote video cameras.;
-                        label_text:The VIEW;">
+                        label_text:Playstation VR;">
         </a-entity>
 
         <a-entity id="Artefact-vrheadset2"  
