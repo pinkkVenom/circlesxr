@@ -47,13 +47,13 @@
         <circles-manager-avatar/>
 
       <a-entity id="default" circles-checkpoint circles-spawnpoint position="0 0.1 0"></a-entity>
-      <a-entity circles-checkpoint circles-spawnpoint position="-2 0.1 -4"></a-entity>
-      <a-entity circles-checkpoint circles-spawnpoint position="2 0.1 -4"></a-entity>
-      <a-entity circles-checkpoint circles-spawnpoint position="-2 0.1 -6.5"></a-entity>
-      <a-entity circles-checkpoint circles-spawnpoint position="2 0.1 -6.5"></a-entity>
+      <a-entity circles-checkpoint position="-2 0.1 -4"></a-entity>
+      <a-entity circles-checkpoint position="2 0.1 -4"></a-entity>
+      <a-entity circles-checkpoint position="-2 0.1 -6.5"></a-entity>
+      <a-entity circles-checkpoint position="2 0.1 -6.5"></a-entity>
 
         <!-- Handle the Nav mesh (movment limitations) here-->
-        <a-entity id="walKMesh" class="navMesh" gltf-model="#floor_model" position="0 0 -4" scale="0.5 0.5 0.32" nav-mesh></a-entity>
+        <a-entity id="walKMesh" class="navMesh" gltf-model="#floor_model" position="0 0 -3.4" scale="2 1 1.35" nav-mesh></a-entity>
 
         <a-entity id="Artefact-shuttle"  
                 scale="0.1 0.1 0.1" position="-1.25 0.9 -9" rotation="0 0 -90" 
@@ -134,7 +134,7 @@
         <a-entity id="roof" scale="1 0.7 0.9" position="0 3.9 -4" gltf-model="#roof_model"></a-entity>
         <a-entity id="roomPos" position="0 0.1 -4">
                 <a-entity id="roomRot" rotation="0 0 0">
-                    <a-entity  id="walls" scale="0.8 0.8 0.8" gltf-model="#walls_model"></a-entity>
+                    <a-entity  id="walls" scale="0.8 0.5 0.64" gltf-model="#walls_model"></a-entity>
                 </a-entity>
         </a-entity>
 
