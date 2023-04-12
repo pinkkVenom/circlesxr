@@ -37,7 +37,8 @@
         <img id="nasa3_img" src="assets/images/helmet.jpg" crossorigin="anonymous">
         <img id="nasa4_img" src="assets/images/mission-iss-in-game-astronaut-suits.jpg" crossorigin="anonymous">
 
-        <img id='room2' src='/worlds/1950/assets/models/room2.png' crossorigin="anonymous">
+        <img id="1970_lk" src="assets/images/doors/1970door.png" crossorigin="anonymous">
+        <img id="1990_lk" src="assets/images/doors/1990door.png" crossorigin="anonymous">
         </a-assets>
 
         <!-- Circles' built-in assets [REQUIRED] -->
@@ -60,7 +61,7 @@
                 gltf-model="#shuttle_model"
                 class="interactive"
                 shadow="receive:false; cast:false;"
-                circles-artefact="inspectScale:0.2 0.2 0.2; textRotationY:0.0; textLookAt:false; inspectRotation:0.0 0.0 -90.0; inspectOffsetY:0; 
+                circles-artefact="inspectScale:0.1 0.1 0.1; textRotationY:0.0; textLookAt:false; inspectRotation:0.0 0.0 0.0; inspectOffsetY:0; 
                         label_visible:true; label_offset:0.0 0.7 0.0; arrow_position:down;
                         title:Space Shuttle;
                         description:The Virtual Interface Environment Workstation (VIEW) is a head-mounted stereoscopic display system in which the display may be an artificial computer-generated environment or a real environment relayed from remote video cameras.;
@@ -101,8 +102,8 @@
                         geometry="primitive:plane; width:1.5; height:1.0;"
                         material="src:#nasa2_img;">
         </a-entity>
-        <a-entity   id="nasa3_img" position="3.75 1.7 -4.2" rotation="0 -90 0" scale="1 1 1"
-                        geometry="primitive:plane; width:1.5; height:1.0;"
+        <a-entity   id="nasa3_img" position="3.75 1.7 -4.1" rotation="0 -90 0" scale="1 1 1"
+                        geometry="primitive:plane; width:1.5; height:1.5;"
                         material="src:#nasa3_img;">
         </a-entity>
         <a-entity   id="nasa4_img" position="3.75 1.7 -6.2" rotation="0 -90 0" scale="1 1 1"
@@ -125,14 +126,14 @@
                 <a-entity text="value:In the mid 1950s cinematographer Morton Heilig developed the Sensorama (patented 1962) which was an arcade-style theatre cabinet that would stimulate all the senses, not just sight and sound. It featured stereo speakers, a stereoscopic 3D display, fans, smell generators and a vibrating chair.;
                         color:black; font:roboto; width:1.5; anchor:left; baseline:top; wrapCount:38;" position="-0.6 0.2 0.05" ></a-entity>
         </a-entity>
-        <a-entity id="sensorama_plane" position="3.6 0.5 -4.3" rotation="-40 -90 0" scale="1 1 1">
+        <a-entity id="sensorama3_plane" position="3.6 0.5 -4.3" rotation="-40 -90 0" scale="1 1 1">
                 <a-entity geometry="primitive:box; width:1.8; height:0.8; depth:0.05;" material="color:white;" position="0.2 0 0" shadow></a-entity>
                 <a-entity text="value:Sensorama; 
                         color:black; font:roboto; width:1; anchor:left; baseline:top; wrapCount:16;" position="-0.5 0.3 0.05" ></a-entity>
                 <a-entity text="value:In the mid 1950s cinematographer Morton Heilig developed the Sensorama (patented 1962) which was an arcade-style theatre cabinet that would stimulate all the senses, not just sight and sound. It featured stereo speakers, a stereoscopic 3D display, fans, smell generators and a vibrating chair.;
                         color:black; font:roboto; width:1.5; anchor:left; baseline:top; wrapCount:38;" position="-0.6 0.2 0.05" ></a-entity>
         </a-entity>
-        <a-entity id="sensorama2_plane" position="3.6 0.5 -6.3" rotation="-40 -90 0" scale="1 1 1">
+        <a-entity id="sensorama4_plane" position="3.6 0.5 -6.4" rotation="-40 -90 0" scale="1 1 1">
                 <a-entity geometry="primitive:box; width:1.8; height:0.8; depth:0.05;" material="color:white;" position="0.2 0 0" shadow></a-entity>
                 <a-entity text="value:Sensorama; 
                         color:black; font:roboto; width:1; anchor:left; baseline:top; wrapCount:16;" position="-0.5 0.3 0.05" ></a-entity>
@@ -142,7 +143,7 @@
 
 
         <!-- Environment objects-->
-        <a-entity id="roof" scale="1 0.7 0.9" position="0 3.9 -4" gltf-model="#roof_model"></a-entity>
+        <a-entity id="roof" scale="1 0.7 1" position="0 3.9 -4" gltf-model="#roof_model"></a-entity>
         <a-entity id="roomPos" position="0 0.1 -4">
                 <a-entity id="roomRot" rotation="0 0 0">
                     <a-entity  id="walls" scale="0.80 0.5 0.64" gltf-model="#walls_model"></a-entity>
@@ -168,11 +169,11 @@
 
         <a-entity id="1970_link"
                 position="-3.25 1.5 -1" rotation="0 0 0" scale="1 1 1"
-                circles-portal="img_src:#room2; title_text:Back to 1970; link_url:/w/1970"></a-entity>
+                circles-portal="img_src:#1970_lk; title_text:Back to 1970; link_url:/w/1970"></a-entity>
 
         <a-entity id="1990_link"
                 position="3.25 1.5 -1" rotation="0 180 0" scale="1 1 1"
-                circles-portal="img_src:#room2; title_text:Go to 1990; link_url:/w/1990"></a-entity>
+                circles-portal="img_src:#1990_lk; title_text:Go to 1990; link_url:/w/1990"></a-entity>
     </a-scene>
 
     <!-- Circles' end scripts [REQUIRED] -->
